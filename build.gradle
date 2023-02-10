@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id("org.lwjgl.plugin") version "0.0.30"
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'org.fallenreaper'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    google()
+    gradlePluginPortal()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    maven { url "https://jitpack.io" }
+}
+apply plugin: 'eclipse'
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.google.code.gson:gson:2.9.1'
+    implementation 'org.joml:joml:1.9.2'
+   // implementation 'org.slick2d:slick2d-core:1.0.1'
+    implementation 'org.apache.commons:commons-lang3:3.0'
+    implementation 'net.java.jinput:jinput:2.0.5'
+  //  implementation 'org.lwjgl:lwjgl:3.2.1'
+    implementation("com.google.guava:guava:24.0-jre")
+
+    implementation ( "com.badlogicgames.gdx:gdx-backend-lwjgl3:1.11.0")
+    implementation ("com.badlogicgames.gdx:gdx:1.11.0")
+    implementation ("com.badlogicgames.gdx-controllers:gdx-controllers-core:2.2.1")
+    implementation ("com.badlogicgames.gdx:gdx-box2d:1.11.0")
+    implementation ("com.badlogicgames.gdx:gdx-box2d-platform:1.11.0:natives-desktop")
+    implementation("com.badlogicgames.gdx:gdx-bullet-platform:1.11.0:natives-desktop")
+    implementation ("com.badlogicgames.gdx:gdx-ai:1.8.2")
+}
+javafx {
+    version = "18"
+    modules = [ 'javafx.controls' ]
+}
+
+test {
+    useJUnitPlatform()
+}
